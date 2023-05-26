@@ -17,6 +17,31 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOWED_ORIGINS = [
+
+    'http://127.0.0.1:8900',
+    'https://localhost:8080',
+    
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Authorization',
+    'Content-Type',
+]
+
 
 
 # Application definition
@@ -48,7 +73,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "Umbrella.urls"
+ROOT_URLCONF = "cole.urls"
+
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+}
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
@@ -66,9 +95,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.TokenAuthentication',
+         
     ],
 }
-
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -85,7 +114,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "Umbrella.wsgi.application"
+WSGI_APPLICATION = "cole.wsgi.application"
 
 
 # Database
