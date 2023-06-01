@@ -5,6 +5,9 @@ import SignUp from '../views/SignUp.vue'
 import Home from '../views/Home.vue'
 import PasswordReset from '../views/PasswordReset.vue'
 import PasswordResetConfirm from '../views/PasswordResetConfirm'
+import Dashboard from '../views/Dashboard.vue'
+import NewOrder from '../views/NewOrder.vue'
+
 
 const routes = [
   {
@@ -21,8 +24,20 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Home,
   },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard,
+  },
+
+  {
+    path: '/neworder',
+    name: 'neworder',
+    component: NewOrder,
+  },
+
   {
     path: '/password/reset',
     name: 'passwordReset',
